@@ -7,8 +7,8 @@ services:
 script:
 - true # TODO: write some tests
 before_deploy:
-- docker build -t aws-lambda-pdf2jpg .
-- docker run --rm -v "$PWD":/var/task aws-lambda-pdf2jpg
+- docker build -t aws-lambda-pdf-optimizer .
+- docker run --rm -v "$PWD":/var/task aws-lambda-pdf-optimizer
 deploy:
   provider: releases
   api_key:
@@ -17,4 +17,4 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
-    repo: blooper05/aws-lambda-pdf2jpg
+    repo: blooper05/aws-lambda-pdf-optimizer
