@@ -26,4 +26,4 @@ def lambda_handler(event, context):
     cmd += tmp_path
     subprocess.check_call(cmd.strip().split(' '))
 
-    client.upload_file(out_path, bucket, out_file)
+    client.upload_file(out_path, bucket, out_file, ExtraArgs={'ContentType': 'application/pdf'})
